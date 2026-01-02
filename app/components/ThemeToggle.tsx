@@ -33,7 +33,7 @@ const ThemeToggle = () => {
   return (
     <button
     aria-label="Toggle dark mode"
-    className="p-2 rounded-md border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
+    className="p-2 rounded-md border border-gray-200 dark:border-gray-800 cursor-pointer"
     onClick={toggle}
     >
         {theme === "dark" ? <Sun aria-hidden/> : <Moon aria-hidden/>}
