@@ -45,7 +45,7 @@ const TaskForm = () => {
           className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 bg-background text-foreground"
           placeholder="Enter task title..."
         />
-        <p className="text-sm text-red-500 mt-1">{error}</p>
+        {error && <p className="text-sm text-red-600 mt-1">{error}</p>}
       </div>
       <div className="sm:col-span-1">
         <label htmlFor="priority" className="block text-sm font-medium">
