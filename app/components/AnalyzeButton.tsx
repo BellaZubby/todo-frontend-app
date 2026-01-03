@@ -84,7 +84,7 @@ const AnalyzeButton = ({ tasks }: AnalyzeButtonProp) => {
           >
             <X className="w-5 h-5 text-red-600" aria-hidden/>
           </button>
-          {result}
+          <div className="mt-2">{result}</div>
         </div>
       )}
     </div>
