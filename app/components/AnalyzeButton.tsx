@@ -63,7 +63,7 @@ const AnalyzeButton = ({ tasks }: AnalyzeButtonProp) => {
       <button
         onClick={analyze}
         disabled={loading || !!result}
-        className={`inline-flex items-center gap-2 rounded-md text-white font-semibold px-4 py-2 ${loading || result ? "bg-purple-400 text-white cursor-not-allowed": "bg-purple-600 text-white hover:bg-purple-700"} `}
+        className={`inline-flex items-center gap-2 rounded-md text-white font-semibold px-4 py-2 ${loading || result ? "bg-purple-400 text-white cursor-not-allowed": "bg-purple-600 text-white hover:bg-purple-700 cursor-pointer"} `}
       >
         <Sparkles aria-hidden /> {loading ? "Analyzing" : "Analyze My Day"}
       </button>

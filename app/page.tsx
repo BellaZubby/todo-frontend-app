@@ -56,9 +56,7 @@ const Home = () => {
       <div className="mt-6">
         {filtered.length === 0 ? <EmptyState /> : <TaskList tasks={filtered} />}
       </div>
-
-       {/* <div className="sm:col-span-1 flex sm:justify-end mt-4"> */}
-       <div className="mt-4">
+       <div className="mt-7">
           {/* Analyse button for AI */}
           <AnalyzeButton tasks={tasks}/>
         </div>

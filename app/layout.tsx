@@ -31,22 +31,23 @@ export default function RootLayout({
        
         <div className="min-h-screen flex flex-col">
            {/* HEADER */}
-          <header className="border-b border-gray-200">
-            <div className="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
-              <h1 className="text-lg font-semibold">Sprint Dashboard</h1>
+          {/* <header className="border-b border-gray-200"> */}
+          <header className="bg-slate-900 text-white fixed top-0 left-0 w-full shadow z-50">
+            <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+              <h1 className="text-xl font-semibold">Sprint Dashboard</h1>
               <ThemeToggle/>
             </div>
           </header>
 
           {/* MAIN CONTENT */}
-          <main className="flex-1">
+          <main className="flex-1 pt-16">
             <div className="max-w-3xl mx-auto px-4 py-6">{children}</div>
           </main>
 
           {/* FOOTER */}
-          <footer className="border-t border-gray-200">
-            <div className="max-w-3xl mx-auto px-4 py-3 text-sm">
-              Built with Next.js, Tailwind, TypeScript, Zustand, and AI
+          <footer className="bg-black text-white text-center">
+            <div className="px-4 py-3 text-sm">
+              Powered by Bella ❤️
             </div>
           </footer>
         </div>
