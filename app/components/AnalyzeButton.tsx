@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Task } from "../utils/types";
-import { Sparkles } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 
 /**
  * AnalyzeButton:
@@ -53,12 +53,17 @@ const AnalyzeButton = ({ tasks }: AnalyzeButtonProp) => {
       setLoading(false);
     }
   };
+
+  const closeResult = () => {
+    setResult(null);
+    setError(null);
+  };
   return (
     <div className="w-full sm:w-auto">
       <button
         onClick={analyze}
-        disabled={loading}
-        className="inline-flex items-center gap-2 rounded-md bg-purple-600 text-white px-4 py-2 hover:bg-purple-700 disabled:opacity-60"
+        disabled={loading || !!result}
+        className={`inline-flex items-center gap-2 rounded-md text-white font-semibold px-4 py-2 ${loading || result ? "bg-purple-400 text-white cursor-not-allowed": "bg-purple-600 text-white hover:bg-purple-700"} `}
       >
         <Sparkles aria-hidden /> {loading ? "Analyzing" : "Analyze My Day"}
       </button>
@@ -71,7 +76,14 @@ const AnalyzeButton = ({ tasks }: AnalyzeButtonProp) => {
       )}
 
       {result && (
-        <div className="mt-3 rounded-md border border-gray-300 p-3 text-sm bg-background">
+        <div className="mt-3 relative rounded-md border border-gray-300 p-3 text-sm bg-background">
+          <button
+            aria-label = "Close analysis result"
+            className="absolute top-0 right-0 p-1 rounded cursor-pointer"
+            onClick={closeResult}
+          >
+            <X className="w-5 h-5 text-red-600" aria-hidden/>
+          </button>
           {result}
         </div>
       )}

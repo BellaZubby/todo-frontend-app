@@ -7,6 +7,7 @@ import TaskList from "./components/TaskList";
 import Filters from "./components/Filters";
 import SearchBar from "./components/SearchBar";
 import EmptyState from "./components/EmptyState";
+import AnalyzeButton from "./components/AnalyzeButton";
 
 /**
  * Dashboard composes search, filters, form, and the task list.
@@ -42,10 +43,6 @@ const Home = () => {
         <div className="sm:col-span-2">
           <SearchBar />
         </div>
-
-        <div className="sm:col-span-1 flex sm:justify-end">
-          {/* Analyse button for AI */}
-        </div>
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2 items-center">
@@ -59,6 +56,12 @@ const Home = () => {
       <div className="mt-6">
         {filtered.length === 0 ? <EmptyState /> : <TaskList tasks={filtered} />}
       </div>
+
+       {/* <div className="sm:col-span-1 flex sm:justify-end mt-4"> */}
+       <div className="mt-4">
+          {/* Analyse button for AI */}
+          <AnalyzeButton tasks={tasks}/>
+        </div>
     </section>
   );
 };
